@@ -6,11 +6,11 @@ Most of this lib is a wrapper around [`inotify`](https://github.com/c4milo/node-
 
 ## Install from npm
 
-	npm install hey
+	$ npm install hey
 
 ## Usage
 ```javascript
-	var Hey = require("hey").Hey;
+	var Hey = require('hey').Hey;
 
 	var watch = new Hey({
 		path : '/path/to/something',
@@ -34,7 +34,7 @@ Most of this lib is a wrapper around [`inotify`](https://github.com/c4milo/node-
 
 * `path` : the path to watch (required, obviously);
 * `recursive` : in the case the path you choose is a folder, you can choose to watch it recursively. *Optional*, default not set;
-* `mask` : the mask to listen to. Ex. if you want just to watch for new files, you use only `Hey.FLAGS.CREATE` as mask. All available masks (for **`Hey`** and not `libnotify`) are listed in this document; *Optional*, default to `Hey.FLAGS.MODIFY | Hey.FLAGS.CREATE | Hey.FLAGS.DELETE | Hey.FLAGS.SELF_DELETE | Hey.FLAGS.MOVE | Hey.FLAGS.SELF_MOVE`;
+* `mask` : the mask to listen to. Ex. if you want just to watch for new files, you use only `Hey.FLAGS.CREATE` as mask. All available masks (for `Hey`, not `libnotify`) are listed in this document; *Optional*, default to `Hey.FLAGS.MODIFY | Hey.FLAGS.CREATE | Hey.FLAGS.DELETE | Hey.FLAGS.SELF_DELETE | Hey.FLAGS.MOVE | Hey.FLAGS.SELF_MOVE`;
 
 
 **Warning II:** activating `recursive` in a folder, you may run out of buffer (as it supports 1024 listeners). We do not plan to change this now as it required, on Linux, changing the `ulimit fopen` size and the source code of [`inotify`](https://github.com/c4milo/node-inotify).
@@ -74,7 +74,7 @@ The following events are available for use (but, most of them only work with fol
 
 ## Future
 
-Our plan is to support all platforms in the future, as Node's fs.watch() evolves (seriously, do this kind of work on what it is **now** would be insane).
+Our plan is to support all platforms in the future, as Node's [`fs.watch()`](http://nodejs.org/api/fs.html#fs_fs_watch_filename_options_listener) evolves (seriously, do this kind of work on what it is **now** would be insane).
 
 ## TODO
 
