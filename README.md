@@ -23,7 +23,7 @@ watch.on('create', function(path, type, mask) {
 });
 
 watch.on('EOB', function() {
-	console.log('arrrr! you\'re watching too many files for now');
+	console.log('arrr! ya arrr spyin\' ta manee scrrrrrolls per now!');
 });
 ```
 ## API
