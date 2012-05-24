@@ -23,7 +23,7 @@ Most of this lib is a wrapper around [`inotify`](https://github.com/c4milo/node-
 	});
 
 	watch.on('EOB', function() {
-		console.log('sorry mate, you're watching too many files for now');
+		console.log('sorry mate, you\'re watching too many files for now');
 	});
 ```
 ## API
