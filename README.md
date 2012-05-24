@@ -66,6 +66,8 @@ The callback function can receive three arguments:
 * `type` : fow now, if the path is a file `Hey.FILE` or directory `Hey.DIRECTORY`;
 * `mask` : the mask of the event (number).
 
+**Warning III:** these parameters works for all events **except** `EOB`.
+
 ### Mask flags
 
 * `Hey.FLAGS.ACCESS`
