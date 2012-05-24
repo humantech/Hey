@@ -1,0 +1,30 @@
+{
+	"name" : "hey",
+	"version" : "0.1.0",
+	"engines" : [
+		"node >=0.6.0"
+	],
+	"description" : "An event driven file watcher for NodeJS with some sugar",
+	"author" : "Richard Kuesters <richard@humantech.com.br>",
+	"license" : {
+		"type" : "MIT"
+	},
+	"keywords" : [
+		"fs",
+		"filesystem",
+		"listener",
+		"watch"
+	],
+	"repository" : {
+		"type" : "git",
+		"url" : ""
+	},
+	"scripts" : {},
+	"directories" : {},
+	"main" : "./lib/hey.js",
+	"dependencies" : {
+		"inotify" : ">=0.2.2"
+	},
+	"devDependencies" : {},
+	"optionalDependencies" : {}
+}
