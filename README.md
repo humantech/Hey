@@ -10,21 +10,21 @@ Most of this lib is a wrapper around [`inotify`](https://github.com/c4milo/node-
 
 ## Usage
 ```javascript
-	var Hey = require('hey').Hey;
+var Hey = require('hey').Hey;
 
-	var watch = new Hey({
-		path : '/path/to/something',
-		recursive : true | false [,
-		mask : Hey.FLAGS.DELETE | Hey.FLAGS... ]
-	});
+var watch = new Hey({
+	path : '/path/to/something',
+	recursive : true | false [,
+	mask : Hey.FLAGS.DELETE | Hey.FLAGS... ]
+});
 
-	watch.on('create', function(path, type, mask) {
-		// do what do you want cause a pirate is free ...
-	});
+watch.on('create', function(path, type, mask) {
+	// do what do you want cause a pirate is free ...
+});
 
-	watch.on('EOB', function() {
-		console.log('sorry mate, you\'re watching too many files for now');
-	});
+watch.on('EOB', function() {
+	console.log('arrrr! you\'re watching too many files for now');
+});
 ```
 ## API
 
@@ -57,6 +57,14 @@ The following events are available for use (but, most of them only work with fol
 * `move` : fired when a path is moved;
 * `ignore` : fired when an event is ignored (this event could happen if you use your own `mask`);
 * `unknown` : fired when an unknown event happens to a path (not really unknown, but not relevant to the moment IMHO).
+
+### Callbacks
+
+The callback function can receive three arguments:
+
+* `path` : the path which triggered the event; 
+* `type` : fow now, if the path is a file `Hey.FILE` or directory `Hey.DIRECTORY`;
+* `mask` : the mask of the event (number).
 
 ### Mask flags
 
