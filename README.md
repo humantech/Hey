@@ -86,7 +86,7 @@ The callback function can receive three arguments:
 
 ### Developer notes
 
-I ran ``Hey`` in my home folder (ext4 fs) recursively, which have around 210G of data, around 41157 folders and 484730 files. When started, the CPU usage goes to ~30% (Core i7) and memory usage to ~180M. When the "first round" of processing is done (read the folder recursively), CPU usage goes to 0% and memory usage to ~80M; and I couldn't detect any leaks so far, as it's runtime was about 6 hours. Of course, more testing needs to be done, specially if the number of notifiers increase.
+I ran ``Hey`` in my home folder (ext4 fs) recursively, which have around 210G of data, around 41157 folders and 484730 files. When started, the CPU usage can go up to ~30% (in my Core i7) and memory usage up to ~180M. When the "first round" of processing is done (read and listen all the folder recursively **OR** reach buffer limit), CPU usage goes to 0% and memory usage to ~8M; and I couldn't detect any leaks so far, as it's runtime was about 6 hours. Of course, more testing needs to be done, specially if the number of notifiers increase.
 
 **Note**: using default [`inotify`](https://github.com/c4milo/node-inotify) `BUF_LEN` and `ulimit fopen` in 1024.
 
