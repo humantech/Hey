@@ -46,7 +46,7 @@ The following events are available for use (but, most of them only works with fo
 
 * `EOB` : fired when all available listeners are taken; perhaps you're watching too many files?
 * `FB` : fired when some listener becomes available; it means *Free Buffer*, not the social thing;
-* `any` : fired when any path event occurs (except `EOB`);
+* `any` : fired when any path event occurs (except `EOB` and `FB`);
 * `access` : fired when a file is accessed;
 * `modify` : fired when a file is modified;
 * `open` : fired when a file is opened;
