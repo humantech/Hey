@@ -27,5 +27,10 @@
 		"inotify" : ">=0.2.2"
 	},
 	"devDependencies" : {},
-	"optionalDependencies" : {}
+	"optionalDependencies" : {},
+	"bugs" : {
+		"url" : "https://github.com/humantech/Hey/issues",
+		"email" : "richard@humantech.com.br"
+	},
+	"os" : ["linux"]
 }
