@@ -1,8 +1,8 @@
 {
 	"name" : "hey",
-	"version" : "0.1.1",
+	"version" : "0.1.2",
 	"engines" : [
-		"node >=0.6.0"
+		"node" : "0.6 || 0.7"
 	],
 	"description" : "An event driven file watcher for NodeJS with some sugar",
 	"author" : "Richard Kuesters <richard@humantech.com.br>",
@@ -13,7 +13,8 @@
 		"fs",
 		"filesystem",
 		"listener",
-		"watch"
+		"watch",
+		"libnotify"
 	],
 	"repository" : {
 		"type" : "git",

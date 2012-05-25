@@ -37,3 +37,7 @@ dir.on('any', function() {
 dir.on('EOB', function() {
 	console.log('end of buffer; too many files to watch already!');
 });
+
+dir.on('FB', function() {
+	console.log('free buffer, we are free to watch some files again!');
+});

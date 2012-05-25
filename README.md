@@ -5,8 +5,9 @@
 Most of this lib is a wrapper around [`inotify`](https://github.com/c4milo/node-inotify) with `EventEmitter` tied on.
 
 ## Install from npm
-
-	$ npm install hey
+```
+$ npm install hey
+```
 
 ## Usage
 ```javascript
@@ -19,7 +20,7 @@ var watch = new Hey({
 });
 
 watch.on('create', function(path, type, mask) {
-	// do what do you want cause a pirate is free ...
+	// do what you want 'cause a pirate is free ...
 });
 
 watch.on('EOB', function() {
@@ -41,9 +42,10 @@ watch.on('EOB', function() {
 
 ### Available events
 
-The following events are available for use (but, most of them only work with folders):
+The following events are available for use (but, most of them only works with folders):
 
 * `EOB` : fired when all available listeners are taken; perhaps you're watching too many files?
+* `FB` : fired when some listener becomes available; it means *Free Buffer*, not the social thing;
 * `any` : fired when any path event occurs (except `EOB`);
 * `access` : fired when a file is accessed;
 * `modify` : fired when a file is modified;
@@ -66,7 +68,7 @@ The callback function can receive three arguments:
 * `type` : fow now, if the path is a file `Hey.FILE` or directory `Hey.DIRECTORY`;
 * `mask` : the mask of the event (number).
 
-**Warning III:** these parameters works for all events **except** `EOB`.
+**Warning III:** these parameters works for all events **except** for `EOB` and `FB`, which receives none.
 
 ### Mask flags
 
@@ -82,6 +84,12 @@ The callback function can receive three arguments:
 * `Hey.FLAGS.MOVE`
 * `Hey.FLAGS.IGNORE`
 
+### Developer notes
+
+I ran ``Hey`` in my home folder (ext4 fs) recursively, which have around 210G of data, around 41157 folders and 484730 files. When started, the CPU usage goes to ~30% (Core i7) and memory usage to ~180M. When the "first round" of processing is done (read the folder recursively), CPU usage goes to 0% and memory usage to ~80M; and I couldn't detect any leaks so far, as it's runtime was about 6 hours. Of course, more testing needs to be done, specially if the number of notifiers increase.
+
+**Note**: using default [`inotify`](https://github.com/c4milo/node-inotify) `BUF_LEN` and `ulimit fopen` in 1024.
+
 ## Future
 
 Our plan is to support all platforms in the future, as Node's [`fs.watch()`](http://nodejs.org/api/fs.html#fs_fs_watch_filename_options_listener) evolves (seriously, do this kind of work on what it is **now** would be insane).
@@ -95,7 +103,7 @@ Our plan is to support all platforms in the future, as Node's [`fs.watch()`](htt
 
 ## License
 
-Copyright (C) 2012 Humantech
+Copyright (C) 2012 [Humantech Gestao do Conhecimento](https://www.humantech.com.br/)
 
 Distributed under the MIT License, the same as NodeJS.
 
