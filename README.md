@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/humantech/Hey.png)](http://travis-ci.org/humantech/Hey)
 # `Hey`, an event driven file watcher for NodeJS with some sugar
 
 **Warning I:** this project is in early development stage, you might not find it useful for now. It only works in Linux (2.6+) boxes (as it depends on `libnotify` to do most of the work).
